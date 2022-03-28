@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BelajarUI">
         <activity
+            android:name=".ScrollingActivity"
+            android:exported="false"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/Theme.BelajarUI.NoActionBar" />
+        <activity
             android:name=".BiodataActivity"
             android:exported="false" />
         <activity

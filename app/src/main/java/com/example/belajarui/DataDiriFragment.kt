@@ -1,10 +1,17 @@
 package com.example.belajarui
 
+import android.app.TimePickerDialog
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import java.util.*
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +28,10 @@ class DataDiriFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    var picker: TimePickerDialog? = null
+    var eText: EditText? = null
+    var btnGet: Button? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -34,7 +45,25 @@ class DataDiriFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_data_diri, container, false)
+        val t=  inflater.inflate(R.layout.fragment_data_diri, container, false)
+        eText= t.findViewById(R.id.editText1)
+        btnGet = t.findViewById(R.id.button1)
+
+        eText!!.setOnClickListener {
+                var calendar = Calendar.getInstance()
+                val hour: Int = calendar.get(Calendar.HOUR_OF_DAY)
+                val minutes: Int = calendar.get(Calendar.MINUTE)
+
+            picker = TimePickerDialog(context,
+                { tp, sHour, sMinute -> eText!!.setText("$sHour:$sMinute") }, hour, minutes, true
+            )
+                picker!!.show()
+        }
+
+        btnGet!!.setOnClickListener {
+            Toast.makeText(activity, eText!!.text.toString(), Toast.LENGTH_LONG).show()
+            }
+        return t
     }
 
     companion object {
