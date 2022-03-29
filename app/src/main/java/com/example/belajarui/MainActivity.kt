@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity(),
 
     private lateinit var buttonDatetime: Button
     private lateinit var buttonBiodata: Button
+    private lateinit var buttonPrint: Button
     private lateinit var textTime: TextView
     private lateinit var textSysdate: TextView
 
@@ -43,6 +44,7 @@ class MainActivity : AppCompatActivity(),
 
         buttonDatetime=findViewById(R.id.btn_timePicker)
         buttonBiodata=findViewById(R.id.btn_biodata)
+        buttonPrint=findViewById(R.id.btn_print)
         textTime = findViewById(R.id.tv_textTime)
         textSysdate = findViewById(R.id.tv_sysdate)
 
@@ -50,6 +52,10 @@ class MainActivity : AppCompatActivity(),
 
         buttonBiodata.setOnClickListener{
             startActivity(Intent(this, BiodataActivity::class.java))
+        }
+
+        buttonPrint.setOnClickListener {
+            startActivity(Intent(this, CustomPrintActivity::class.java))
         }
 
     }
