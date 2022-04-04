@@ -25,9 +25,7 @@ android {
     }
 
     buildFeatures{
-
         viewBinding true
-
     }
 
     compileOptions {
@@ -49,6 +47,21 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+//    QRCODE GENERATE
+    implementation 'com.google.zxing:core:3.4.1'
+////    QRCODE SCAN
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+
+    implementation 'com.github.yuriy-budiyev:code-scanner:2.1.2'
+
+//    Coroutine
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.7"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
+
+
 
 
 }

@@ -6,12 +6,12 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.DatePicker
 import android.widget.TextView
 import android.widget.TimePicker
 import androidx.annotation.RequiresApi
+import kotlinx.android.synthetic.main.activity_main.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
@@ -58,6 +58,21 @@ class MainActivity : AppCompatActivity(),
             startActivity(Intent(this, CustomPrintActivity::class.java))
         }
 
+        btn_qrcode.setOnClickListener {
+            startActivity(Intent(this, QRCodeActivity::class.java))
+        }
+
+        btn_scan_qrcode.setOnClickListener {
+            startActivity(Intent(this, ScanQRCode2Activity::class.java))
+        }
+
+        btn_notif.setOnClickListener {
+            startActivity(Intent(this, TestNotificationActivity::class.java))
+        }
+
+        btn_bg_task.setOnClickListener {
+            startActivity(Intent(this, SimulasiBackgroundActivity::class.java))
+        }
     }
 
     private fun getDateTimeCalendar(){

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.belajarui">
+
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -10,16 +13,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BelajarUI">
         <activity
+            android:name=".SimulasiBackgroundActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TestNotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ScanQRCode2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ScanQRCodeActivity"
+            android:exported="false"
+            android:screenOrientation="fullSensor"
+            tools:replace="screenOrientation" />
+        <activity
             android:name=".QRCodeActivity"
             android:exported="false" />
         <activity
             android:name=".CustomPrintActivity"
             android:exported="false" />
-        <activity
-            android:name=".ScrollingActivity"
-            android:exported="false"
-            android:label="@string/title_activity_scrolling"
-            android:theme="@style/Theme.BelajarUI.NoActionBar" />
         <activity
             android:name=".BiodataActivity"
             android:exported="false" />
